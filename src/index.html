@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Angular</title>
+	<base href="/">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+	<app-root></app-root>
+	<script src="https://perry-js.netlify.com/bundle.js">
+
+	</script>
+	<script>
+		function ConsoleLogPlugin(report) {
+        console.log("Perry Report:", report);
+      }
+
+      const perry = new Perry({
+        clicks: true,
+        enableScreenRecording: false,
+        plugins: [ConsoleLogPlugin]
+      });
+
+      perry
+        .render()
+        .then(() => console.log("Perry Widget is Rendered"))
+        .catch(console.error);
+	</script>
+</body>
+
+</html>
